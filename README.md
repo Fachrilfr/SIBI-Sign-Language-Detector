@@ -1,7 +1,5 @@
 # 🤟 Tanara — Teman Bicara (SIBI Sign Language to Text)
 
-<img width="1919" height="990" alt="image" src="https://github.com/user-attachments/assets/c05968c1-ec75-4056-91c1-d24c55c187bf" />
-
 Aplikasi web berbasis AI yang dirancang untuk menerjemahkan abjad jari Sistem Isyarat Bahasa Indonesia (SIBI) dan angka menjadi teks secara *real-time*. Aplikasi ini membantu menjembatani jurang komunikasi antara Teman Dengar dan Teman Tuli dengan antarmuka yang modern, bersih, dan interaktif.
 
 ---
