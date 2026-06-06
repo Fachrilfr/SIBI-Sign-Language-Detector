@@ -1,37 +1,113 @@
-# Tanara — Teman Bicara (SIBI Sign Language to Text)
+# 🤟 Tanara — Teman Bicara (SIBI Sign Language to Text)
 
 <img width="1919" height="990" alt="image" src="https://github.com/user-attachments/assets/c05968c1-ec75-4056-91c1-d24c55c187bf" />
 
-💡 Tanara is an AI-powered web application designed to act as a "speaking friend" (*teman bicara*) by translating Indonesian Sign Language (SIBI) fingerspelling and numbers into text in real-time.
+Aplikasi web berbasis AI yang dirancang untuk menerjemahkan abjad jari Sistem Isyarat Bahasa Indonesia (SIBI) dan angka menjadi teks secara *real-time*. Aplikasi ini membantu menjembatani jurang komunikasi antara Teman Dengar dan Teman Tuli dengan antarmuka yang modern, bersih, dan interaktif.
 
 ---
 
-## 🇬🇧 English Version
+## 🌟 Fitur Utama
+Aplikasi ini mencakup berbagai fitur menarik yang siap digunakan:
 
-### Tech Used
-TensorFlow, Keras, MediaPipe, OpenCV, Python, Flask, React.js, Vite, Vanilla CSS
-
-### Purpose
-Communication is a fundamental human right, yet individuals in the deaf and hard-of-hearing community face significant communication barriers in their daily lives. SIBI (*Sistem Isyarat Bahasa Indonesia*) is the standard system used for spelling words, but it remains unfamiliar to the general public. Tanara (*Teman Bicara*) was created to bridge this communication gap. By leveraging computer vision and deep learning, Tanara acts as an interactive companion that translates SIBI fingerspelling and numbers into readable text in real-time, making learning and understanding sign language accessible and engaging for everyone.
-
-### Development Process
-As a solo project, I handled the end-to-end full-stack and AI development of Tanara. I integrated MediaPipe Hands to crop active hand regions and trained a MobileNetV2 model in TensorFlow/Keras to classify 36 SIBI gestures (A–Y and 0–9). Next, I built a Flask backend API to handle media uploads and run real-time inference, alongside a React + Vite frontend styled with a warm, organic palette using Vanilla CSS to host the translator, dictionary, and quiz engine.
-
-### Outcome
-This project resulted in a fully functional web application for real-time SIBI sign language translation and learning. The system is capable of recognizing sign gestures directly from a live webcam feed as well as processing image and video uploads. Key features include an interactive learning visualizer that converts typed text into a sequence of corresponding hand sign cards, and a gamified quiz game with a 60-second timer that tests users' signing accuracy against the AI with instant real-time feedback.
+* **⚡ Real-time Webcam Translation**
+  Deteksi gerakan tangan langsung melalui kamera web menggunakan AI untuk menerjemahkan abjad/angka SIBI menjadi teks secara instan.
+* **📂 Media Upload Translation**
+  Menerjemahkan isyarat dari unggahan file gambar (JPG, PNG) maupun video (MP4, AVI, MOV) secara otomatis.
+* **✍️ Belajar Isyarat (Spelling Visualizer)**
+  Masukkan kata atau kalimat, dan aplikasi akan menampilkan rangkaian visualisasi isyarat tangan per huruf agar pengguna bisa belajar mengeja kata.
+* **🏆 Tantangan Kuis (Gamified Quiz)**
+  Uji kemampuan isyarat Anda dalam kuis interaktif berdurasi 60 detik dengan deteksi langsung via kamera dan sistem skor otomatis dari AI.
+* **📖 Galeri Referensi**
+  Kamus visual lengkap yang menampilkan seluruh gerakan tangan abjad A–Z (tanpa J & Z) dan angka 0–9.
 
 ---
 
-## 🇮🇩 Versi Indonesia
+## 🛠️ Teknologi & Library yang Digunakan
+Aplikasi ini dibangun menggunakan kombinasi teknologi AI dan Fullstack modern berikut:
 
-### Tech Used
-TensorFlow, Keras, MediaPipe, OpenCV, Python, Flask, React.js, Vite, Vanilla CSS
+### Frontend
+* **React.js (Vite)** - Framework Single Page Application (SPA) yang cepat dan responsif.
+* **React Router DOM** - Manajemen navigasi antar halaman.
+* **Vanilla CSS** - Kustomisasi antarmuka dengan tema hangat (*warm & organic*) menggunakan Google Fonts (Lora & Plus Jakarta Sans).
 
-### Purpose
-Komunikasi adalah hak mendasar bagi semua orang, namun komunitas Tuli dan Teman Dengar sering kali menghadapi hambatan komunikasi yang besar dalam kehidupan sehari-hari. SIBI (Sistem Isyarat Bahasa Indonesia) adalah salah satu sistem isyarat yang digunakan untuk mengeja kata, tetapi masih asing bagi masyarakat luas. Tanara (Teman Bicara) diciptakan untuk menjembatani jurang komunikasi tersebut. Dengan memanfaatkan *computer vision* dan *deep learning*, Tanara hadir sebagai "teman bicara" yang menerjemahkan isyarat huruf dan angka SIBI menjadi teks secara langsung, membuat bahasa isyarat menjadi lebih interaktif dan mudah dipelajari oleh siapa saja.
+### Backend & AI (Python)
+* **Flask & Flask-CORS** - REST API ringan untuk melayani komunikasi frontend dan backend.
+* **MediaPipe Hands** - Pendeteksian *landmark* tangan dan ekstraksi area isyarat secara presisi.
+* **TensorFlow & Keras** - Pembuatan dan pelatihan model *deep learning* (MobileNetV2) dengan teknik *transfer learning* & *fine-tuning*.
+* **OpenCV** - Pengolahan *frame* gambar dan video *feed* kamera.
+* **NumPy** - Pemrosesan matriks dan array piksel gambar.
 
-### Development Process
-Sebagai proyek solo, saya menangani seluruh pengembangan *full-stack* dan AI untuk Tanara. Saya mengintegrasikan MediaPipe Hands untuk mendeteksi *landmark* tangan dan memotong area tangan yang aktif secara otomatis. Untuk klasifikasi *gesture*, saya melatih model *deep learning* berbasis arsitektur MobileNetV2 dengan teknik *transfer learning* dan *fine-tuning* di TensorFlow/Keras untuk mengenali 36 kelas isyarat SIBI (A–Y dan 0–9). Saya membangun *backend* API Flask untuk menangani unggahan media dan inferensi *real-time*, sekaligus mengembangkan *frontend* menggunakan React.js dan Vite dengan desain bertema hangat (*warm & organic*) menggunakan Vanilla CSS untuk menyajikan fitur penerjemah, kamus visual, serta sistem kuis latihan.
+---
 
-### Outcome
-Proyek ini menghasilkan aplikasi web fungsional untuk penerjemahan dan pembelajaran bahasa isyarat SIBI secara *real-time*. Sistem ini mampu mendeteksi gerakan isyarat secara langsung melalui kamera *webcam* serta memproses unggahan foto maupun video. Aplikasi ini juga dilengkapi dengan modul belajar interaktif yang mengubah teks ketikan menjadi rangkaian kartu isyarat abjad yang sesuai, serta kuis interaktif berdurasi 60 detik di mana pengguna dapat menguji ketepatan gerakan tangan mereka di depan kamera dengan penilaian otomatis dari AI.
+## 🚀 Cara Menjalankan Project
+Ikuti langkah-langkah berikut untuk menjalankan aplikasi di lingkungan lokal Anda:
+
+### Prasyarat
+* Pastikan Anda sudah menginstal Python 3.10 ke atas di perangkat Anda.
+* Pastikan Node.js terinstal untuk menjalankan frontend React.
+
+### Langkah Instalasi
+
+1. **Clone repositori ini ke komputer lokal Anda:**
+   ```bash
+   git clone https://github.com/Fachrilfr/SIBI-Sign-Language-Detector.git
+   ```
+2. **Masuk ke direktori project:**
+   ```bash
+   cd SIBI-Sign-Language-Detector
+   ```
+
+3. **Jalankan Backend (Flask API):**
+   * Aktifkan virtual environment (`venv`):
+     * **PowerShell:** `.\venv\Scripts\Activate.ps1`
+     * **CMD:** `venv\Scripts\activate.bat`
+   * Jalankan server Flask:
+     ```bash
+     python app.py
+     ```
+   * *Server API akan berjalan di `http://127.0.0.1:5000`.*
+
+4. **Jalankan Frontend (React + Vite):**
+   * Buka tab terminal baru dan masuk ke folder `frontend`:
+     ```bash
+     cd frontend
+     ```
+   * Instal semua dependensi Node:
+     ```bash
+     npm install
+     ```
+   * Jalankan development server:
+     ```bash
+     npm run dev
+     ```
+   * *Aplikasi web dapat diakses di browser melalui alamat yang tertera di terminal (biasanya `http://localhost:5173`).*
+
+---
+
+## 📂 Struktur Folder Proyek
+
+```text
+SIBI-Sign-Language-Detector/
+├── data/                       # Folder gambar dataset per kelas huruf/angka
+├── uploads/                    # Folder penyimpanan sementara unggahan gambar/video
+├── venv/                       # Python virtual environment
+├── app.py                      # REST API Flask & logika inferensi AI (MobileNetV2)
+├── capture_dataset.py          # Script pengambilan dataset tangan lewat webcam
+├── cekdataset.py               # Script debug untuk memeriksa hasil crop gambar
+├── labels.json                 # Pemetaan indeks ke kelas karakter (A-Y, 0-9)
+├── mobilenet_sign_model.h5     # File model AI terlatih
+├── requirements.txt            # Daftar dependensi library Python
+├── .gitignore                  # Berkas untuk mengabaikan file venv, node_modules, dll.
+└── frontend/                   # Folder aplikasi React
+    ├── public/                 # Favicon dan aset statis yang bisa diakses langsung
+    ├── src/                    # Source code React
+    │   ├── assets/             # Aset gambar & stylesheet CSS
+    │   │   └── static/         # Style utama (app.css, landing.css, style.css) & logo
+    │   ├── pages/              # Halaman web utama
+    │   │   ├── Landing.jsx     # Halaman landing awal
+    │   │   └── MainApp.jsx     # Aplikasi dashboard, kuis, translator, & referensi
+    │   ├── App.jsx             # Pengaturan router halaman
+    │   └── main.jsx            # Entry point React
+    ├── package.json            # Berkas konfigurasi dependencies Node.js
+    └── vite.config.js          # Konfigurasi server Vite
+```
