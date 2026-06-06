@@ -1,0 +1,26 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node.js
+node_modules/
+dist/
+build/
+frontend/node_modules/
+frontend/dist/
+
+# Local data, uploads, & debug files
+uploads/
+debug_crops/
+data/
+
+# OS files
+.DS_Store
+Thumbs.db
